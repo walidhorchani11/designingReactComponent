@@ -1,0 +1,17 @@
+import React from 'react';
+
+import SpeakerItem from './SpeakerItem';
+import withData from '../../hoc/withData';
+
+const SpeakerList = ({ data }) => {
+  const x = 123;
+  return (
+    <ul>
+      {data?.map((item) => (
+        <SpeakerItem key={Math.random()} speaker={item} />
+      ))}
+    </ul>
+  );
+};
+
+export default withData(3)(SpeakerList);
