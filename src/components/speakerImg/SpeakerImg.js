@@ -1,9 +1,10 @@
 import React from 'react';
+import LazyLoad from 'react-lazyload';
 
 export default function SpeakerImg({ source }) {
   return (
-    <div>
+    <LazyLoad height={200}>
       <img src={source} width="250" height="200" />
-    </div>
+    </LazyLoad>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import SpeakerItem from '../speaker/SpeakerItem';
+import SpeakerSearchBar from '../speakerSearchBar/SpeakerSearchBar'
 
 const data = [
   {
@@ -15,33 +16,46 @@ const data = [
     isFavorite: false,
     image: '/static/z.jpg',
   },
+  {
+    id: '3',
+    name: 'aya',
+    isFavorite: false,
+    image: '/static/hd.jpg'
+  }
 ];
 
 const SpeakerList = () => {
   const [speakers, setSpeakers] = useState(data);
+  const [searchQuery, setSearchQuery] = useState('');
   const toggleFavorite = (id) => {
     console.log('toggle favorite is clicked:', id);
-    setSpeakers(() => {
-      const n = speakers.filter((speaker) => {
+     setSpeakers((prevSpeakers) => {
+       return prevSpeakers.map((speaker) => {
         if (speaker.id == id) {
-          return { ...speaker, isFavorite: true };
+
+          return { ...speaker, isFavorite: !speaker.isFavorite };
         } else {
           return speaker;
         }
       });
-      return n;
     });
   };
   return (
-    <ul>
-      {speakers?.map((item) => (
+    <div>
+      <SpeakerSearchBar setSearchQuery={setSearchQuery}  />
+      {speakers?.filter((item) => {
+        const x = `${item.name} ${item.id}`.toLowerCase();
+        if(x.includes(searchQuery.toLowerCase())){
+          return item;
+        }
+      }).map((item) => (
         <SpeakerItem
           key={item.id}
           speaker={item}
           toggleFavorite={toggleFavorite}
         />
       ))}
-    </ul>
+    </div>
   );
 };
 
