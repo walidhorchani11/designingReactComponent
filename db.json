@@ -1,0 +1,28 @@
+{
+  "speakers": [
+    {
+      "id": "1",
+      "name": "John",
+      "isFavorite": false,
+      "image": "/static/a.jpg"
+    },
+    {
+      "id": "2",
+      "name": "walid",
+      "isFavorite": true,
+      "image": "/static/z.jpg"
+    },
+    {
+      "id": "3",
+      "name": "aya",
+      "isFavorite": true,
+      "image": "/static/hd.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Nesrine",
+      "isFavorite": false,
+      "image": "/static/hd.jpg"
+    }
+  ]
+}
