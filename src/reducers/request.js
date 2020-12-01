@@ -34,6 +34,7 @@ export default (initialState, action) => {
         }
       });
       return {
+        ...initialState,
         status: REQUEST_STATUS.SUCCESS,
         records: newRecords,
       };

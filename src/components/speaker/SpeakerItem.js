@@ -10,7 +10,7 @@ export default function SpeakerItem({ speaker, toggleFavorite }) {
       <SpeakerFavoriteButton
         isFavorite={speaker.isFavorite}
         toggleFavorite={toggleFavorite}
-        id={speaker.id}
+        speaker={speaker}
       />
       <SpeakerImg source={speaker.image} />
     </div>

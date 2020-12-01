@@ -2,14 +2,14 @@ import React from 'react';
 
 export default function SpeakerFavoriteButton({
   isFavorite,
-  id,
+  speaker,
   toggleFavorite,
 }) {
   return (
     <div>
       <img
         src={isFavorite ? '/static/heartRed.png' : '/static/heartBlack.png'}
-        onClick={toggleFavorite.bind(this, id)}
+        onClick={toggleFavorite.bind(this, speaker)}
       />
     </div>
   );
