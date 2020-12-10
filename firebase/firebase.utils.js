@@ -12,14 +12,16 @@ const firebaseConfig = {
   measurementId: 'G-487Z1BP9GB',
 };
 
-firebase.initializeApp(firebaseConfig);
+if (firebase.apps.length === 0) {
+  firebase.initializeApp(firebaseConfig);
+}
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: 'selectionner votre compte' });
+provider.setCustomParameters({ prompt: 'select_account' });
 
-export const signInWthGoogle = () => auth.signInWithPopup(provider);
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
 export default firebase;

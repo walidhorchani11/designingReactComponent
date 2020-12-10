@@ -4,6 +4,7 @@ import withRequest from '../../hoc/withRequest';
 import SpeakerItem from '../speaker/SpeakerItem';
 import SpeakerSearchBar from '../speakerSearchBar/SpeakerSearchBar';
 import { REQUEST_STATUS } from '../../reducers/request';
+import { signInWithGoogle } from '../../../firebase/firebase.utils';
 
 const SpeakerList = ({ status, speakers, put }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -36,6 +37,7 @@ const SpeakerList = ({ status, speakers, put }) => {
                 toggleFavorite={toggleFavorite}
               />
             ))}
+          <button onClick={signInWithGoogle}> Google </button>
         </div>
       )}
     </div>

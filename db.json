@@ -15,7 +15,7 @@
     {
       "id": "3",
       "name": "aya",
-      "isFavorite": true,
+      "isFavorite": false,
       "image": "/static/hd.jpg"
     },
     {
